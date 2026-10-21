@@ -1,0 +1,153 @@
+/* Přidejte Inter z Google Fonts do index.html / Add Inter from Google Fonts in index.html */
+.cs{--black:#0b0b0c;--bg:#0b0b0c;--ink:#f2f2f3;--paper:#131315;--white:#fff;--red:#d1202b;--red-dark:#9d151e;--red-soft:#ff5a63;--maroon:#2a0d10;--grey:#a4a4aa;--line:#2b2b2e;--line-d:#2b2b2e}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+.cs{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-text-size-adjust:100%}
+.cs *,.cs *::before,.cs *::after{box-sizing:border-box}
+.cs h1,.cs h2,.cs h3{margin:0 0 .5em;line-height:1.1;letter-spacing:-.03em}
+.cs h1{font-size:clamp(2.2rem,7vw,4.4rem);font-weight:800}
+.cs h2{font-size:clamp(1.8rem,4.5vw,2.8rem);font-weight:700}
+.cs h3{font-size:1.1rem;font-weight:600;letter-spacing:-.01em}
+.cs p{margin:0 0 1em;max-width:62ch}
+.cs a{color:inherit}
+.cs :focus-visible{outline:3px solid var(--red);outline-offset:3px}
+.cs .wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.cs section{padding:clamp(60px,9vw,112px) 0}
+.cs .alt{background:rgba(11,11,12,.55);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.cs .dark{background:var(--black);color:var(--white)}
+.cs .eyebrow{display:flex;align-items:center;gap:12px;font-size:.78rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:20px}
+.cs .eyebrow::before{content:"";width:32px;height:2px;background:currentColor}
+.cs .sub{color:var(--grey);font-size:1.05rem}
+.cs .dark .eyebrow,.cs .hero .eyebrow{color:var(--red-soft)}
+.cs .dark .sub,.cs .hero .sub{color:#a9a9ae}
+.cs header{position:sticky;top:0;z-index:20;background:rgba(11,11,12,.86);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.cs .bar{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.cs .logo{font-weight:800;font-size:1.05rem;text-decoration:none;letter-spacing:.08em;text-transform:uppercase;display:flex;align-items:center;gap:10px}
+.cs .logo::before{content:"";width:14px;height:14px;background:var(--red)}
+.cs .logo span{color:var(--red)}
+.cs nav{display:flex;gap:28px}
+.cs nav a{text-decoration:none;color:var(--grey);font-weight:500;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase}
+.cs nav a:hover{color:var(--red)}
+.cs .right{display:flex;align-items:center;gap:10px}
+.cs .lang{display:flex;border:1px solid var(--line)}
+.cs .lang button{font:inherit;font-size:.8rem;font-weight:600;border:0;background:transparent;color:var(--grey);padding:10px 12px;cursor:pointer}
+.cs .lang button.on{background:var(--red);color:var(--white)}
+.cs .burger{display:none;width:44px;height:44px;border:1px solid var(--line);background:var(--bg);cursor:pointer;padding:0;align-items:center;justify-content:center}
+.cs .burger i,.cs .burger i::before,.cs .burger i::after{display:block;width:18px;height:2px;background:var(--ink);position:relative;content:""}
+.cs .burger i::before{position:absolute;top:-6px}
+.cs .burger i::after{position:absolute;top:6px}
+.cs .btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;background:var(--red);color:var(--white);padding:0 30px;border-radius:2px;font:inherit;font-size:.82rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:0;cursor:pointer;transition:background .2s}
+.cs .btn:hover{background:var(--red-dark)}
+.cs .btn.ghost{background:transparent;color:inherit;border:1.5px solid currentColor}
+.cs .btn.ghost:hover{background:var(--red);border-color:var(--red);color:var(--white)}
+.cs .btn.sm{min-height:42px;padding:0 20px}
+.cs .ph{position:relative;border-radius:2px;background:#1c1c1f;border:1px dashed #3a3a3e;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--grey);font-size:.9rem;padding:16px;min-height:200px;overflow:hidden}
+.cs .ph b{display:block;color:var(--ink)}
+.cs .ph:has(img){padding:0;border:0}
+.cs .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.cs .hero .ph,.cs .dark .ph{background:#151517;border-color:#3a3a3e;color:#8c8c92}
+.cs .hero .ph b,.cs .dark .ph b{color:var(--white)}
+.cs .hero{background:linear-gradient(90deg,rgba(11,11,12,.4),transparent 65%);color:var(--white);padding:clamp(44px,7vw,96px) 0 clamp(52px,8vw,100px)}
+.cs .grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(28px,5vw,72px);align-items:center}
+.cs .hero h1 em{font-style:normal;color:var(--red-soft)}
+.cs .hero .sub{font-size:clamp(1.05rem,2.5vw,1.2rem);margin-bottom:30px}
+.cs .hero .ph{min-height:clamp(260px,42vw,500px)}
+.cs .btns{display:flex;gap:12px;flex-wrap:wrap}
+.cs .stats{display:grid;grid-template-columns:repeat(3,1fr);margin-top:56px;border-top:1px solid var(--line-d)}
+.cs .stats>div{padding:24px 16px 0 0}
+.cs .stats b{display:block;font-size:clamp(1.6rem,4vw,2.6rem);font-weight:800;letter-spacing:-.03em;color:var(--red-soft)}
+.cs .stats span{color:#a9a9ae;font-size:.88rem}
+.cs .two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,72px);align-items:center}
+.cs .two.top{align-items:start}
+.cs .facts{list-style:none;padding:0;margin:24px 0 0;display:grid;gap:0}
+.cs .facts li{padding:14px 0 14px 28px;border-bottom:1px solid var(--line);position:relative;font-weight:500}
+.cs .facts li::before{content:"";position:absolute;left:0;top:23px;width:10px;height:10px;background:var(--red)}
+.cs .head{margin-bottom:44px}
+.cs .cards{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.cs .card{padding:36px 30px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);background:rgba(11,11,12,.55);transition:background .25s,color .25s}
+.cs .card .n{font-size:.85rem;font-weight:700;letter-spacing:.14em;color:var(--red);margin-bottom:36px}
+.cs .card p{margin:0;color:var(--grey);font-size:.96rem}
+.cs .card:hover{background:var(--red);color:var(--white)}
+.cs .card:hover p{color:#ffe3e5}
+.cs .card:hover .n{color:var(--white)}
+.cs .gallery{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:12px}
+.cs .gallery .ph{min-height:0;height:100%}
+.cs .gallery .big{grid-column:span 2;grid-row:span 2}
+.cs .gallery .wide{grid-column:span 2}
+.cs .quote{font-size:clamp(1.3rem,3vw,1.8rem);font-weight:700;line-height:1.3;letter-spacing:-.02em;margin:0 0 22px;border-left:3px solid var(--red);padding-left:20px}
+.cs .steps{counter-reset:s;list-style:none;padding:0;margin:0}
+.cs .steps li{counter-increment:s;padding:22px 0 22px 68px;border-bottom:1px solid var(--line);position:relative}
+.cs .steps li:first-child{border-top:1px solid var(--line)}
+.cs .steps li::before{content:counter(s,decimal-leading-zero);position:absolute;left:0;top:22px;font-size:1.5rem;font-weight:800;color:var(--red);letter-spacing:-.02em}
+.cs .steps strong{display:block;margin-bottom:2px}
+.cs .steps span{color:var(--grey);font-size:.95rem}
+.cs .dark{background:rgba(22,6,8,.5);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.cs #works.dark{background:var(--black)}
+.cs form{display:grid;gap:14px;background:#151517;color:var(--ink);border-radius:2px;padding:clamp(22px,4vw,34px);border-top:4px solid var(--red)}
+.cs label{display:grid;gap:6px;font-weight:600;font-size:.82rem;letter-spacing:.04em;text-transform:uppercase}
+.cs input,.cs textarea{font:inherit;font-size:16px;text-transform:none;letter-spacing:0;font-weight:400;padding:14px;border-radius:2px;border:1px solid var(--line);background:var(--bg);color:var(--ink);width:100%}
+.cs input:focus,.cs textarea:focus{border-color:var(--red);outline:none;box-shadow:0 0 0 3px rgba(209,32,43,.18)}
+.cs textarea{min-height:110px;resize:vertical}
+.cs .ok{color:var(--red-soft);font-weight:600;margin:0}
+.cs .contact-list{list-style:none;padding:0;margin:0;display:grid;gap:0}
+.cs .contact-list li{padding:16px 0;border-bottom:1px solid var(--line-d)}
+.cs .contact-list small{display:block;color:#8c8c92;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.cs .contact-list a{font-weight:600;text-decoration:none}
+.cs footer{padding:28px 0;background:var(--black);color:#8c8c92;font-size:.88rem;border-top:1px solid var(--line-d)}
+.cs footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.cs .call{display:none}
+@media(max-width:960px){.cs .cards{grid-template-columns:1fr 1fr}
+.cs .gallery{grid-template-columns:1fr 1fr;grid-auto-rows:190px}
+}
+@media(max-width:860px){.cs .burger{display:flex}
+.cs .hide-sm{display:none}
+.cs nav{position:absolute;left:0;right:0;top:100%;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;gap:0;padding:6px 20px 14px;display:none}
+.cs nav.open{display:flex}
+.cs nav a{padding:16px 0;font-size:.9rem;border-bottom:1px solid var(--line)}
+.cs nav a:last-child{border:0}
+.cs .grid,.cs .two{grid-template-columns:1fr}
+.cs .hero .ph{order:-1;min-height:240px}
+.cs .call{display:flex;position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:30;width:56px;height:56px;border-radius:50%;background:var(--red);color:var(--white);align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,.35);text-decoration:none}
+}
+@media(max-width:560px){.cs .cards{grid-template-columns:1fr}
+.cs .gallery{grid-template-columns:1fr;grid-auto-rows:220px}
+.cs .gallery .big,.cs .gallery .wide{grid-column:auto;grid-row:auto}
+.cs .btns .btn{width:100%}
+.cs .stats{margin-top:40px}
+.cs .stats>div{padding-right:8px}
+.cs .steps li{padding-left:56px}
+.cs footer .wrap{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
+.cs *{transition:none!important}
+}
+.cs .paint{position:fixed;inset:0;z-index:-1;pointer-events:none;background:#050505 url("../assets/bg-paint.jpg") center/cover no-repeat}
+@media(max-width:700px){.cs .paint{background-position:88% 50%}}
+.cs{isolation:isolate}
+.cs .actions{display:grid;gap:12px;background:#151517;padding:clamp(22px,4vw,34px);border-top:4px solid var(--red)}
+.cs .actions h3{margin:0 0 4px;font-size:1.3rem}.cs .actions .sub{margin:0 0 8px}
+.cs .action{display:flex;align-items:center;gap:16px;padding:16px 18px;border:1px solid var(--line);background:var(--bg);text-decoration:none;transition:background .2s,border-color .2s}
+.cs .action:hover{background:var(--red);border-color:var(--red)}
+.cs .action .ico{display:grid;place-items:center;width:48px;height:48px;flex:none;background:rgba(209,32,43,.18);color:var(--red-soft)}
+.cs .action:hover .ico{background:rgba(255,255,255,.2);color:#fff}
+.cs .action b{display:block;font-size:1rem}.cs .action small{color:var(--grey);font-size:.88rem;word-break:break-all}
+.cs .action:hover small{color:#ffe3e5}
+.cs .action .arr{margin-left:auto;color:var(--red-soft);font-size:1.3rem}.cs .action:hover .arr{color:#fff}
+/* ---- glass panels over the splash background ---- */
+.cs header{background:rgba(8,8,9,.6);border-bottom-color:rgba(255,255,255,.08)}
+.cs .alt{background:rgba(8,8,9,.42);backdrop-filter:none;-webkit-backdrop-filter:none}
+.cs .dark{background:linear-gradient(rgba(8,8,9,.35),rgba(30,6,9,.5));backdrop-filter:none;-webkit-backdrop-filter:none}
+.cs .hero h1,.cs .hero .sub{text-shadow:0 2px 26px rgba(0,0,0,.65)}
+.cs .stats{border-top-color:rgba(255,255,255,.16)}
+.cs .facts li,.cs .contact-list li{border-bottom-color:rgba(255,255,255,.14)}
+.cs .cards{gap:16px;border:0}
+.cs .card{background:rgba(10,10,11,.6);border:1px solid rgba(255,255,255,.1);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:transform .25s,background .25s,border-color .25s}
+.cs .card:hover{background:rgba(26,26,30,.74);border-color:rgba(255,255,255,.3);transform:translateY(-4px);color:var(--ink)}
+.cs .card:hover p{color:var(--grey)}
+.cs .card:hover .n{color:var(--red-soft)}
+.cs .steps li{background:rgba(10,10,11,.58);border:1px solid rgba(255,255,255,.1);padding:20px 20px 20px 72px;margin-bottom:12px;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.cs .steps li:first-child{border-top:1px solid rgba(255,255,255,.1)}
+.cs .steps li::before{left:20px;top:20px}
+.cs .ph,.cs .hero .ph,.cs .dark .ph{background:rgba(10,10,11,.5);border-color:rgba(255,255,255,.25);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.cs .actions{background:rgba(10,10,11,.64);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-top:3px solid var(--red)}
+.cs .action{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.14)}
+.cs footer{background:rgba(0,0,0,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
