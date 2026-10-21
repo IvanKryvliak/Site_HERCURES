@@ -1,0 +1,4 @@
+[functions.track-event]
+# Public endpoint for low-detail, consent-based website analytics events.
+# The function validates allowed event names/fields and uses a server-side service key.
+verify_jwt = false

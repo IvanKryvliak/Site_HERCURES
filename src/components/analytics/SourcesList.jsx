@@ -1,4 +1,5 @@
 export default function SourcesList({ items }) {
+  if (!items?.length) return <p className="an-empty">Пока нет данных за выбранный период.</p>;
   return (
     <ul className="an-bars">
       {items.map((s, i) => (

@@ -10,9 +10,13 @@ import Clients from "../components/Clients";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import CallButton from "../components/CallButton";
+import AnalyticsConsent from "../components/AnalyticsConsent";
+import { useEffect } from "react";
+import { trackPageView } from "../utils/track";
 import "../styles/site.css";
 
 export default function HomePage() {
+  useEffect(() => { trackPageView(); }, []);
   const [lang, setLang] = useLang();
   const t = T[lang];
 
@@ -30,6 +34,7 @@ export default function HomePage() {
       </main>
       <Footer t={t} />
       <CallButton />
+      <AnalyticsConsent />
     </div>
   );
 }

@@ -5,9 +5,11 @@ const W = 700, H = 260, P = { l: 44, r: 40, t: 16, b: 30 };
 export default function TrafficChart({ series }) {
   const [hover, setHover] = useState(null);
   const n = series.length;
-  const maxV = Math.max(...series.map((d) => d.visits)) * 1.1;
+  if (!n) return <p className="an-empty">Поки немає подій за вибраний період.</p>;
+  const maxV = Math.max(...series.map((d) => d.visits), 1) * 1.1;
   const maxL = Math.max(...series.map((d) => d.contacts), 1) * 1.3;
-  const x = (i) => P.l + (i / (n - 1)) * (W - P.l - P.r);
+  const chartWidth = W - P.l - P.r;
+  const x = (i) => P.l + (n === 1 ? 0.5 : i / (n - 1)) * chartWidth;
   const yV = (v) => H - P.b - (v / maxV) * (H - P.t - P.b);
   const yL = (v) => H - P.b - (v / maxL) * (H - P.t - P.b);
   const line = (key, y) => series.map((d, i) => `${i ? "L" : "M"}${x(i).toFixed(1)},${y(d[key]).toFixed(1)}`).join(" ");
@@ -15,6 +17,7 @@ export default function TrafficChart({ series }) {
   const step = Math.ceil(n / 6);
 
   const onMove = (e) => {
+    if (n < 2) { setHover(0); return; }
     const r = e.currentTarget.getBoundingClientRect();
     const px = ((e.clientX - r.left) / r.width) * W;
     setHover(Math.max(0, Math.min(n - 1, Math.round(((px - P.l) / (W - P.l - P.r)) * (n - 1)))));
