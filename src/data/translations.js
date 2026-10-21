@@ -48,7 +48,7 @@ export const T = {
     viber: "Napsat na Viber", mail: "Napsat e-mail", callLbl: "Zavolat",
     mailSubject: "Poptávka rekonstrukce",
     mailBody: "Dobrý den! Zajímá mě rekonstrukce. Prosím o kontakt.\n\nJméno:\nTelefon:\nCo je potřeba zrekonstruovat:",
-    foot: ["© 2026 Dům & Veranda", "Rekonstrukce bytů, domů a kanceláří"],
+    foot: ["© 2026 HEFEST REK-BYT", "Rekonstrukce bytů, domů a kanceláří"],
   },
   en: {
     nav: ["About", "Services", "Projects", "Clients", "Contact"],
