@@ -34,7 +34,7 @@ export default function HomePage() {
       </main>
       <Footer t={t} />
       <CallButton />
-      <AnalyticsConsent />
+      <AnalyticsConsent lang={lang} />
     </div>
   );
 }

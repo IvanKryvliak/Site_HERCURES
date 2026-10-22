@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import HomePage from "./pages/HomePage";
 import AnalyticsPage from "./pages/AnalyticsPage";
+import OwnerVisitPage from "./pages/OwnerVisitPage";
 
 /* Jednoduché přepínání stránek bez knihoven: web na "/", analýza na "/#/analytics" */
 export default function App() {
@@ -12,5 +13,8 @@ export default function App() {
     return () => window.removeEventListener("hashchange", onChange);
   }, []);
 
-  return hash === "#/analytics" ? <AnalyticsPage /> : <HomePage />;
+  if (hash === "#/analytics") return <AnalyticsPage />;
+  if (hash === "#/ignore") return <OwnerVisitPage ignore />;
+  if (hash === "#/count") return <OwnerVisitPage ignore={false} />;
+  return <HomePage />;
 }

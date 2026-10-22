@@ -9,15 +9,9 @@ function getInitialChoice() {
   catch { return "unset"; }
 }
 
-export default function AnalyticsConsent() {
+export default function AnalyticsConsent({ lang }) {
   const [choice, setChoice] = useState(getInitialChoice);
   const [open, setOpen] = useState(() => getInitialChoice() === "unset");
-  const [lang] = useState(() => {
-    try {
-      const saved = localStorage.getItem("lang");
-      return saved === "en" || (!saved && (navigator.language || "").startsWith("en")) ? "en" : "cs";
-    } catch { return "cs"; }
-  });
 
   function choose(value) {
     try { localStorage.setItem(CONSENT_KEY, value); } catch { /* site still works without saved consent */ }
@@ -43,7 +37,7 @@ export default function AnalyticsConsent() {
   return (
     <>
       {open && (
-        <section className="analytics-consent" role="dialog" aria-modal="false" aria-labelledby="analytics-consent-title">
+        <div className="analytics-consent" role="dialog" aria-modal="false" aria-labelledby="analytics-consent-title">
           <div className="analytics-consent-copy">
             <h2 id="analytics-consent-title">{copy.title}</h2>
             <p>{copy.text}</p>
@@ -52,11 +46,13 @@ export default function AnalyticsConsent() {
             <button type="button" className="analytics-consent-accept" onClick={() => choose("granted")}>{copy.allow}</button>
             <button type="button" className="analytics-consent-reject" onClick={() => choose("rejected")}>{copy.reject}</button>
           </div>
-        </section>
+        </div>
       )}
+      <div className="analytics-consent-footer">
       <button type="button" className="analytics-consent-manage" onClick={() => setOpen(true)} aria-expanded={open}>
         {copy.manage}{choice === "granted" ? " · ✓" : choice === "rejected" ? " · ✕" : ""}
       </button>
+      </div>
     </>
   );
 }

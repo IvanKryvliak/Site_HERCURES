@@ -46,3 +46,12 @@
 @media(max-width:600px){.an-header-actions{width:100%;justify-content:space-between}.an-range button{padding:10px 12px}.an-note{line-height:1.7}.an-refresh{float:none;margin-left:8px}}
 
 .an-kpi .neutral{color:var(--grey)}
+
+.an-top h1,.an-top p,.an-back{text-shadow:0 1px 14px rgba(0,0,0,.85)}
+@media(max-width:560px){.an-kpis{grid-template-columns:1fr 1fr;gap:10px}.an-kpis .an-panel{padding:14px}.an-kpi b{font-size:1.5rem}.an-kpi span{font-size:.78rem}}
+
+.cs .an-ignore{display:flex;align-items:center;gap:10px;font-size:.9rem;color:var(--grey);cursor:pointer;min-height:44px;font-weight:500;text-transform:none;letter-spacing:0}
+.cs .an-ignore input[type=checkbox]{width:20px;height:20px;padding:0;margin:0;accent-color:#d1202b;flex:none}
+.an-owner{max-width:520px;margin:14vh auto 0;text-align:left}
+.an-owner h1{font-size:clamp(1.6rem,5vw,2.2rem);margin:0 0 10px}
+.an-owner p{color:var(--grey);margin:0 0 18px}

@@ -8,6 +8,8 @@ import TopPages from "../components/analytics/TopPages";
 import ContactsTable from "../components/analytics/ContactsTable";
 import { emptySeries } from "../data/analytics";
 import { fetchAnalyticsSummary, getStoredAnalyticsSession, isAnalyticsConfigured, signInWithPassword, signOut } from "../lib/supabase";
+import { isIgnored, setIgnored, wasIgnoreChosen } from "../lib/ignoreSelf";
+import useNoIndex from "../hooks/useNoIndex";
 import "../styles/site.css";
 import "../styles/analytics.css";
 
@@ -66,6 +68,8 @@ function LoginPanel({ onLogin, busy, error }) {
 
 export default function AnalyticsPage() {
   const [days, setDays] = useState(30);
+  useNoIndex();
+  const [ignoreSelf, setIgnoreSelf] = useState(() => isIgnored());
   const [session, setSession] = useState(() => getStoredAnalyticsSession());
   const [summary, setSummary] = useState(() => emptySummary(30));
   const [loading, setLoading] = useState(false);
@@ -103,6 +107,8 @@ export default function AnalyticsPage() {
     try {
       const nextSession = await signInWithPassword(email, password);
       setSession(nextSession);
+      // Власник увійшов: за замовчуванням не рахуємо його візити на цьому пристрої.
+      if (!wasIgnoreChosen()) { setIgnored(true); setIgnoreSelf(true); }
     } catch (err) {
       setError(err?.message || "Не вдалося увійти. Перевір email і пароль.");
     } finally {
@@ -162,6 +168,10 @@ export default function AnalyticsPage() {
               {loading ? "Загрузка статистики…" : lastUpdated ? `Данные загружены ${lastUpdated.toLocaleTimeString("ru-RU", { hour: "2-digit", minute: "2-digit" })}. Учитываются только события после согласия на аналитику.` : "Ожидание данных…"}
               <button className="an-refresh" type="button" onClick={() => void loadSummary(days)} disabled={loading}>{loading ? "Обновление…" : "Обновить"}</button>
             </div>
+            <label className="an-ignore">
+              <input type="checkbox" checked={ignoreSelf} onChange={(e) => { setIgnored(e.target.checked); setIgnoreSelf(e.target.checked); }} />
+              Не учитывать мои посещения на этом устройстве
+            </label>
             {error && <div className="an-error" role="alert">{error}</div>}
 
             <div className="an-kpis">

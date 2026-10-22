@@ -1,6 +1,13 @@
-.analytics-consent{position:fixed;z-index:1000;left:20px;right:20px;bottom:60px;max-width:1000px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:22px;padding:20px;background:#111114;border:1px solid #44444a;border-top:3px solid #d1202b;box-shadow:0 16px 50px #0009;color:#f2f2f3}
-.analytics-consent-copy{max-width:680px}.analytics-consent h2{margin:0 0 7px;font-size:1rem}.analytics-consent p{margin:0;color:#c5c5ca;font-size:.9rem;line-height:1.55}
-.analytics-consent-actions{display:flex;gap:8px;flex-wrap:wrap;flex:none}.analytics-consent button{font:inherit;font-size:.85rem;font-weight:700;border:1px solid #4b4b52;padding:11px 14px;min-height:42px;cursor:pointer}.analytics-consent-accept{background:#d1202b;color:white;border-color:#d1202b!important}.analytics-consent-reject{background:transparent;color:#f2f2f3}
-.analytics-consent-manage{position:fixed;z-index:999;right:16px;bottom:12px;background:#17171a;color:#c5c5ca;border:1px solid #45454a;padding:7px 10px;font:inherit;font-size:.72rem;cursor:pointer}
-.analytics-consent button:focus-visible,.analytics-consent-manage:focus-visible{outline:2px solid #ff5a63;outline-offset:3px}
-@media(max-width:680px){.analytics-consent{left:10px;right:10px;bottom:56px;align-items:stretch;flex-direction:column;gap:14px;padding:16px}.analytics-consent-actions{width:100%}.analytics-consent-actions button{flex:1}.analytics-consent-manage{right:10px;bottom:8px}}
+.cs .analytics-consent{position:fixed;z-index:1000;left:16px;right:16px;bottom:16px;max-width:980px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 20px;background:rgba(14,14,17,.96);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid #3a3a40;border-top:3px solid #d1202b;box-shadow:0 16px 50px #000a;color:#f2f2f3}
+.cs .analytics-consent-copy{max-width:660px}
+.cs .analytics-consent h2{margin:0 0 6px;font-size:1rem;font-weight:700;letter-spacing:0;line-height:1.3}
+.cs .analytics-consent p{margin:0;max-width:none;color:#c5c5ca;font-size:.88rem;line-height:1.5;text-shadow:none}
+.cs .analytics-consent-actions{display:flex;gap:8px;flex-wrap:wrap;flex:none}
+.cs .analytics-consent button{font:inherit;font-size:.85rem;font-weight:700;border:1px solid #4b4b52;padding:0 16px;min-height:44px;cursor:pointer}
+.cs .analytics-consent-accept{background:#d1202b;color:#fff;border-color:#d1202b!important}
+.cs .analytics-consent-reject{background:transparent;color:#f2f2f3}
+.cs .analytics-consent-footer{background:#000;text-align:center;padding:0 0 14px}
+.cs .analytics-consent-manage{background:none;border:0;color:#8c8c92;font:inherit;font-size:.78rem;text-decoration:underline;cursor:pointer;padding:8px 12px;min-height:40px}
+.cs .analytics-consent-manage:hover{color:#f2f2f3}
+.cs .analytics-consent button:focus-visible,.cs .analytics-consent-manage:focus-visible{outline:2px solid #ff5a63;outline-offset:3px}
+@media(max-width:680px){.cs .analytics-consent{left:10px;right:10px;bottom:10px;align-items:stretch;flex-direction:column;gap:12px;padding:14px}.cs .analytics-consent-actions{width:100%}.cs .analytics-consent-actions button{flex:1}}

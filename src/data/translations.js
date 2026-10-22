@@ -102,4 +102,4 @@ export const T = {
   },
 };
 
-export const BRAND = { cs: ["Dům", "Veranda"], en: ["Home", "Porch"] };
+export const BRAND = { cs: ["HEFEST REK-BYT"], en: ["HEFEST REK-BYT"] };

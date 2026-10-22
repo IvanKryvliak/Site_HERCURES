@@ -1,4 +1,5 @@
 import { sendAnalyticsEvent } from "../lib/supabase";
+import { isIgnored } from "../lib/ignoreSelf";
 
 const CONSENT_KEY = "hearcures_analytics_consent";
 let lastPageViewKey = null;
@@ -52,7 +53,7 @@ function getPagePath() {
 }
 
 export function trackPageView() {
-  if (!hasConsent()) return;
+  if (!hasConsent() || isIgnored()) return;
   const page_path = getPagePath();
   const session_id = getSessionId();
   const guardKey = `${page_path}:${session_id}`;
@@ -68,7 +69,7 @@ export function trackPageView() {
 }
 
 export function trackContact(channel) {
-  if (!hasConsent()) return;
+  if (!hasConsent() || isIgnored()) return;
   const payload = {
     event_type: "contact_click",
     session_id: getSessionId(),

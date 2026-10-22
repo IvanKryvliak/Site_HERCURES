@@ -1,6 +1,7 @@
 /* Přidejte Inter z Google Fonts do index.html / Add Inter from Google Fonts in index.html */
 .cs{--black:#0b0b0c;--bg:#0b0b0c;--ink:#f2f2f3;--paper:#131315;--white:#fff;--red:#d1202b;--red-dark:#9d151e;--red-soft:#ff5a63;--maroon:#2a0d10;--grey:#a4a4aa;--line:#2b2b2e;--line-d:#2b2b2e}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
+html,body{margin:0;background:#0b0b0c}
 .cs{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-text-size-adjust:100%}
 .cs *,.cs *::before,.cs *::after{box-sizing:border-box}
 .cs h1,.cs h2,.cs h3{margin:0 0 .5em;line-height:1.1;letter-spacing:-.03em}
@@ -151,3 +152,12 @@ html{scroll-behavior:smooth;scroll-padding-top:72px}
 .cs .actions{background:rgba(10,10,11,.64);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,.1);border-top:3px solid var(--red)}
 .cs .action{background:rgba(255,255,255,.04);border-color:rgba(255,255,255,.14)}
 .cs footer{background:rgba(0,0,0,.72);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+
+/* ---- fixes after visual review ---- */
+.cs .eyebrow{color:var(--red-soft);text-shadow:0 1px 10px rgba(0,0,0,.7)}
+.cs .stats b,.cs .stats span{text-shadow:0 1px 14px rgba(0,0,0,.85)}
+.cs .hero .sub{color:#d0d0d5}
+.cs .sub{text-shadow:0 1px 12px rgba(0,0,0,.6)}
+@media(max-width:860px){.cs .hero{background:rgba(8,8,9,.5)}}
+@media(max-width:560px){.cs .card{padding:20px 18px}.cs .card .n{margin-bottom:14px}.cs .steps li{padding:16px 16px 16px 58px}.cs .steps li::before{left:16px;top:16px}}
+.cs header{background:#09090a;border-bottom-color:rgba(255,255,255,.1)}
