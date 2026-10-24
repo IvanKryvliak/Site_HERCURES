@@ -5,7 +5,7 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2";
 const allowedOrigins = (Deno.env.get("ALLOWED_ORIGINS") || "").split(",").map((s) => s.trim()).filter(Boolean);
 const allowedSources = new Set(["Direct", "Search", "Instagram", "Facebook", "LinkedIn", "Other"]);
 const allowedDevices = new Set(["Mobile", "Tablet", "Desktop"]);
-const allowedChannels = new Set(["viber", "mail", "tel", "other"]);
+const allowedChannels = new Set(["whatsapp", "mail", "tel", "other"]);
 const MAX_BODY_BYTES = 2000;
 
 function corsFor(origin: string | null) {

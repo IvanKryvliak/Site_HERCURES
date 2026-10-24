@@ -17,7 +17,7 @@ export default function Header({ t, lang, setLang }) {
   return (
     <header>
       <div className="wrap bar">
-        <a className="logo" href="#top">{BRAND[lang][0]}{BRAND[lang][1]}</a>
+        <a className="logo" href="#top">{BRAND[lang][0]}<span>&amp;</span>{BRAND[lang][1]}</a>
         <nav id="menu" className={open ? "open" : ""} aria-label="Menu" onClick={onNavClick}>
           {t.nav.map((n, i) => <a key={n} href={`#${SECTION_IDS[i]}`}>{n}</a>)}
         </nav>

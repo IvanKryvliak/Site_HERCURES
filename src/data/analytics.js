@@ -1,5 +1,5 @@
 export const CHANNEL_NAMES = {
-  viber: "Viber",
+  whatsapp: "WhatsApp",
   mail: "Эл. почта",
   tel: "Телефон",
   other: "Другое",

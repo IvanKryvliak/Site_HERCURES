@@ -38,7 +38,7 @@
 .an-badge{display:inline-block;padding:3px 10px;font-size:.75rem;font-weight:700;white-space:nowrap;background:#2b2b2e}
 @media(max-width:900px){.an-kpis{grid-template-columns:1fr 1fr}.an-two{grid-template-columns:1fr}}
 @media(max-width:480px){.an-kpis{grid-template-columns:1fr}.an-top{align-items:flex-start}}
-.an-badge.viber{background:#59267c;color:#fff}.an-badge.mail{background:var(--red);color:#fff}.an-badge.tel{background:#2b2b2e;color:#f2f2f3}
+.an-badge.whatsapp{background:#1d6b43;color:#fff}.an-badge.mail{background:var(--red);color:#fff}.an-badge.tel{background:#2b2b2e;color:#f2f2f3}
 .an-note{border-left:3px solid var(--red);background:rgba(11,11,12,.6);padding:12px 16px;color:var(--grey);font-size:.9rem}
 
 .an-header-actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}.an-logout,.an-refresh{font:inherit;font-size:.82rem;font-weight:700;border:1px solid var(--line);color:#f2f2f3;background:#17171a;padding:10px 13px;min-height:42px;cursor:pointer}.an-refresh{float:right;padding:5px 10px;min-height:30px;margin-top:-4px}.an-logout:hover,.an-refresh:hover{border-color:var(--red-soft)}.an-logout:disabled,.an-refresh:disabled{opacity:.55;cursor:wait}

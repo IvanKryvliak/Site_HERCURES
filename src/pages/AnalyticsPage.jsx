@@ -152,7 +152,7 @@ export default function AnalyticsPage() {
               <div>
                 <a className="an-back" href="#/">← Назад на сайт</a>
                 <h1>Анализ сайта</h1>
-                <p>Реальные посещения и клики по Viber, почте и телефону.</p>
+                <p>Реальные посещения и клики по WhatsApp, почте и телефону.</p>
               </div>
               <div className="an-header-actions">
                 <div className="an-range" role="group" aria-label="Период">

@@ -1,0 +1,44 @@
+.cs .works-filter{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+.cs .works-chip{font:inherit;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);background:rgba(10,10,11,.6);border:1px solid rgba(255,255,255,.14);padding:0 16px;min-height:44px;cursor:pointer;transition:color .2s,border-color .2s,background .2s}
+.cs .works-chip:hover{color:#fff;border-color:rgba(255,255,255,.35)}
+.cs .works-chip[aria-pressed="true"]{background:var(--red);border-color:var(--red);color:#fff}
+.cs .works-chip small{margin-left:8px;opacity:.7;font-weight:500;font-size:.85em}
+.cs .works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.cs .work-tile{position:relative;display:block;width:100%;padding:0;border:0;background:#0f0f11;aspect-ratio:4/3;overflow:hidden;cursor:zoom-in;color:#fff}
+.cs .work-tile img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.cs .work-tile:hover img{transform:scale(1.05)}
+.cs .work-tile::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(0,0,0,.78));opacity:0;transition:opacity .25s}
+.cs .work-tile:hover::after,.cs .work-tile:focus-visible::after{opacity:1}
+.cs .work-cap{position:absolute;z-index:1;left:14px;right:14px;bottom:12px;text-align:left;font-size:.9rem;font-weight:600;opacity:0;transform:translateY(6px);transition:opacity .25s,transform .25s}
+.cs .work-tile:hover .work-cap,.cs .work-tile:focus-visible .work-cap{opacity:1;transform:none}
+@media(hover:none){.cs .work-tile::after{opacity:1}.cs .work-cap{opacity:1;transform:none}}
+.cs .work-ph{cursor:default;display:flex;align-items:center;justify-content:center;background:rgba(10,10,11,.5);border:1px dashed rgba(255,255,255,.25);color:var(--grey);font-size:.9rem}
+.cs .works-more{display:flex;justify-content:center;margin-top:28px}
+@media(max-width:560px){.cs .works-grid{grid-template-columns:1fr;gap:10px}.cs .work-cap{font-size:.78rem;left:10px;right:10px;bottom:8px}.cs .works-more .btn{width:100%}}
+
+/* повноекранний перегляд */
+.cs .lb{position:fixed;inset:0;z-index:2000;display:grid;grid-template-columns:auto 1fr auto;grid-template-rows:auto minmax(0,1fr) auto;background:#050506;color:#fff;animation:lbIn .2s ease}
+@keyframes lbIn{from{opacity:0}to{opacity:1}}
+.cs .lb-top{grid-column:1/-1;display:flex;justify-content:space-between;align-items:center;padding:calc(10px + env(safe-area-inset-top,0px)) 16px 10px}
+.cs .lb-count{font-size:.85rem;font-weight:600;letter-spacing:.1em;color:#a4a4aa}
+.cs .lb-btn,.cs .lb-nav{font:inherit;color:#fff;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.25);cursor:pointer;width:48px;height:48px;font-size:1.3rem;line-height:1;transition:background .2s,border-color .2s}
+.cs .lb-btn:hover,.cs .lb-nav:hover{background:var(--red);border-color:var(--red)}
+.cs .lb-nav{grid-row:2;align-self:center;margin:0 10px;font-size:2rem;padding-bottom:4px}
+.cs .lb-nav.prev{grid-column:1}.cs .lb-nav.next{grid-column:3}
+.cs .lb-stage{grid-column:2;grid-row:2;margin:0;min-width:0;min-height:0;display:grid;grid-template-rows:minmax(0,1fr) auto;justify-items:center;gap:10px;touch-action:pan-y}
+.cs .lb-stage img{width:100%;height:100%;min-height:0;object-fit:contain;animation:lbIn .25s ease}
+.cs .lb-stage figcaption{font-size:.92rem;font-weight:600;color:#d0d0d5;padding-bottom:2px}
+.cs .lb-stage figcaption::first-letter,.cs .work-cap::first-letter{text-transform:uppercase}
+.cs .lb-thumbs{grid-column:1/-1;display:flex;gap:8px;overflow-x:auto;justify-content:safe center;padding:10px 16px calc(10px + env(safe-area-inset-bottom,0px));scrollbar-width:thin}
+.cs .lb-thumbs button{flex:none;width:84px;height:60px;padding:0;border:2px solid transparent;background:#111;opacity:.5;cursor:pointer;transition:opacity .2s,border-color .2s}
+.cs .lb-thumbs button:hover{opacity:.85}
+.cs .lb-thumbs button[aria-current="true"]{border-color:var(--red);opacity:1}
+.cs .lb-thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.cs .lb button:focus-visible{outline:2px solid #ff5a63;outline-offset:2px}
+@media(max-width:700px){
+.cs .lb-stage{grid-column:1/-1}
+.cs .lb-nav{position:absolute;z-index:2;top:50%;margin:0;width:42px;height:42px;font-size:1.6rem;background:rgba(10,10,11,.6);transform:translateY(-50%)}
+.cs .lb-nav.prev{left:6px}.cs .lb-nav.next{right:6px}
+.cs .lb-thumbs button{width:64px;height:48px}
+}
+@media(prefers-reduced-motion:reduce){.cs .lb,.cs .lb-stage img{animation:none}.cs .work-tile img,.cs .work-cap{transition:none}}

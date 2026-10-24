@@ -76,7 +76,7 @@ export function trackContact(channel) {
     page_path: getPagePath(),
     source: getSource(),
     device: getDevice(),
-    channel: ["viber", "mail", "tel"].includes(channel) ? channel : "other",
+    channel: ["whatsapp", "mail", "tel"].includes(channel) ? channel : "other",
   };
   void sendAnalyticsEvent(payload);
 

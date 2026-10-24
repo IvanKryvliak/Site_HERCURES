@@ -1,4 +1,4 @@
-import { PHONE, PHONE_VIEW, EMAIL } from "../data/config";
+import { PHONE, PHONE_VIEW, EMAIL, WHATSAPP_NUMBER } from "../data/config";
 import { trackContact } from "../utils/track";
 
 const svgProps = { width: 26, height: 26, viewBox: "0 0 24 24", fill: "none", stroke: "currentColor", strokeWidth: 2, strokeLinecap: "round", strokeLinejoin: "round" };
@@ -6,9 +6,9 @@ const svgProps = { width: 26, height: 26, viewBox: "0 0 24 24", fill: "none", st
 export default function ContactActions({ t }) {
   const items = [
     {
-      href: `viber://chat?number=${encodeURIComponent(PHONE)}`,
-      channel: "viber",
-      label: t.viber, value: PHONE_VIEW,
+      href: `https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g, "")}?text=${encodeURIComponent(t.waText)}`,
+      channel: "whatsapp",
+      label: t.whatsapp, value: WHATSAPP_NUMBER.replace(/^\+(\d{3})(\d{3})(\d{3})(\d{3})$/, "+$1 $2 $3 $4"),
       icon: <path d="M21 11.5a8.4 8.4 0 0 1-12.2 7.5L3 20.5l1.6-5.3A8.4 8.4 0 1 1 21 11.5z" />,
     },
     {
