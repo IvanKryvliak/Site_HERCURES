@@ -1,27 +1,22 @@
 import { sendAnalyticsEvent } from "../lib/supabase";
 import { isIgnored } from "../lib/ignoreSelf";
+import { getCookie, setCookie } from "../lib/cookies";
+import { hasConsent, SESSION_COOKIE } from "../lib/consent";
 
-const CONSENT_KEY = "hearcures_analytics_consent";
 let lastPageViewKey = null;
 let fallbackSessionId = null;
 
-function hasConsent() {
-  try { return localStorage.getItem(CONSENT_KEY) === "granted"; }
-  catch { return false; }
+function newId() {
+  return globalThis.crypto?.randomUUID?.() || `${Date.now().toString(16)}-${Math.random().toString(16).slice(2)}`;
 }
 
+// Номер сесії зберігається в сесійному cookie (зникає після закриття браузера).
+// Якщо cookies заблоковані, номер живе лише в памʼяті сторінки.
 function getSessionId() {
-  try {
-    let id = sessionStorage.getItem("hearcures_analytics_session_id");
-    if (!id) {
-      id = globalThis.crypto?.randomUUID?.() || `${Date.now().toString(16)}-${Math.random().toString(16).slice(2)}`;
-      sessionStorage.setItem("hearcures_analytics_session_id", id);
-    }
-    return id;
-  } catch {
-    if (!fallbackSessionId) fallbackSessionId = globalThis.crypto?.randomUUID?.() || `${Date.now().toString(16)}-${Math.random().toString(16).slice(2)}`;
-    return fallbackSessionId;
-  }
+  const id = getCookie(SESSION_COOKIE) || fallbackSessionId || newId();
+  fallbackSessionId = id;
+  setCookie(SESSION_COOKIE, id);
+  return id;
 }
 
 function getSource() {

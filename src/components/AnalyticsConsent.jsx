@@ -1,57 +1,64 @@
 import { useState } from "react";
 import { trackPageView } from "../utils/track";
+import { PRIVACY_URL } from "../data/config";
+import { getConsent, setConsent } from "../lib/consent";
 import "../styles/analytics-consent.css";
 
-const CONSENT_KEY = "hearcures_analytics_consent";
-
-function getInitialChoice() {
-  try { return localStorage.getItem(CONSENT_KEY) || "unset"; }
-  catch { return "unset"; }
-}
+const COPY = {
+  cs: {
+    title: "Soubory cookies",
+    text: "Vždy používáme nezbytné cookies (volba jazyka a váš výběr souhlasu). S vaším souhlasem navíc analytické cookies, které měří anonymní návštěvnost a kliknutí na kontaktní tlačítka. Neukládáme vaše jméno, telefon ani e-mail. Souhlas můžete kdykoli změnit nebo odvolat.",
+    policy: "Zásady ochrany osobních údajů",
+    accept: "Souhlasím",
+    decline: "Nesouhlasím",
+    manage: "Nastavení cookies",
+    status: { granted: "souhlas udělen", rejected: "souhlas neudělen" },
+  },
+  en: {
+    title: "Cookies",
+    text: "We always use necessary cookies (your language and your consent choice). With your consent we also use analytics cookies that measure anonymous traffic and clicks on the contact buttons. We do not store your name, phone number or email. You can change or withdraw your consent at any time.",
+    policy: "Privacy policy",
+    accept: "Accept",
+    decline: "Decline",
+    manage: "Cookie settings",
+    status: { granted: "consent given", rejected: "consent declined" },
+  },
+};
 
 export default function AnalyticsConsent({ lang }) {
-  const [choice, setChoice] = useState(getInitialChoice);
-  const [open, setOpen] = useState(() => getInitialChoice() === "unset");
+  const [choice, setChoice] = useState(getConsent);
+  const [open, setOpen] = useState(() => getConsent() === "unset");
+  const copy = COPY[lang === "en" ? "en" : "cs"];
 
   function choose(value) {
-    try { localStorage.setItem(CONSENT_KEY, value); } catch { /* site still works without saved consent */ }
+    setConsent(value);
     setChoice(value);
     setOpen(false);
     if (value === "granted") trackPageView();
   }
 
-  const copy = lang === "en" ? {
-    title: "Analytics settings",
-    text: "With your permission, this site records basic traffic statistics and clicks on the contact buttons. It does not send your name, phone number or email address to the analytics table. You can change this choice at any time.",
-    allow: "Allow analytics",
-    reject: "Reject",
-    manage: "Analytics settings",
-  } : {
-    title: "Nastavení analytiky",
-    text: "Se souhlasem měříme základní návštěvnost a kliknutí na kontaktní tlačítka. Do analytické tabulky neposíláme vaše jméno, telefon ani e-mail. Toto nastavení můžete kdykoli změnit.",
-    allow: "Povolit analytiku",
-    reject: "Odmítnout",
-    manage: "Nastavení analytiky",
-  };
-
   return (
     <>
       {open && (
         <div className="analytics-consent" role="dialog" aria-modal="false" aria-labelledby="analytics-consent-title">
-          <div className="analytics-consent-copy">
-            <h2 id="analytics-consent-title">{copy.title}</h2>
-            <p>{copy.text}</p>
-          </div>
+          <h2 id="analytics-consent-title">{copy.title}</h2>
+          <p>{copy.text}</p>
+          {PRIVACY_URL && (
+            <a className="analytics-consent-policy" href={PRIVACY_URL} {...(PRIVACY_URL.startsWith("#") ? {} : { target: "_blank", rel: "noopener noreferrer" })}>
+              {copy.policy}
+            </a>
+          )}
+          {/* Обидві кнопки однакові за виглядом: відмова так само проста, як згода. */}
           <div className="analytics-consent-actions">
-            <button type="button" className="analytics-consent-accept" onClick={() => choose("granted")}>{copy.allow}</button>
-            <button type="button" className="analytics-consent-reject" onClick={() => choose("rejected")}>{copy.reject}</button>
+            <button type="button" className="analytics-consent-choice" data-choice="granted" onClick={() => choose("granted")}>{copy.accept}</button>
+            <button type="button" className="analytics-consent-choice" data-choice="rejected" onClick={() => choose("rejected")}>{copy.decline}</button>
           </div>
         </div>
       )}
       <div className="analytics-consent-footer">
-      <button type="button" className="analytics-consent-manage" onClick={() => setOpen(true)} aria-expanded={open}>
-        {copy.manage}{choice === "granted" ? " · ✓" : choice === "rejected" ? " · ✕" : ""}
-      </button>
+        <button type="button" className="analytics-consent-manage" onClick={() => setOpen(true)} aria-expanded={open}>
+          {copy.manage}{copy.status[choice] ? ` (${copy.status[choice]})` : ""}
+        </button>
       </div>
     </>
   );
