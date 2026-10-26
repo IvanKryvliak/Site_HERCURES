@@ -27,7 +27,9 @@ const COPY = {
 
 export default function AnalyticsConsent({ lang }) {
   const [choice, setChoice] = useState(getConsent);
-  const [open, setOpen] = useState(() => getConsent() === "unset");
+  // Не показуємо модальне вікно автоматично при першому відвідуванні.
+  // Аналітика залишається вимкненою, доки користувач явно не погодиться в налаштуваннях.
+  const [open, setOpen] = useState(false);
   const copy = COPY[lang === "en" ? "en" : "cs"];
 
   function choose(value) {
