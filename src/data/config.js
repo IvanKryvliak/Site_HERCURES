@@ -1,5 +1,4 @@
 import MaimPhoto from "../assets/Main.jpg"
-import Hravni from "../assets/HEFEST_REK-BYT_hero_1000x1000.jpg"
 
 /* Kontakty, fotky, id sekcí / Contacts, photos, section ids */
 export const PHONE = "+420777170086";
@@ -11,7 +10,7 @@ export const WHATSAPP_CONFIGURED = Boolean(WHATSAPP_NUMBER && WHATSAPP_NUMBER !=
 export const EMAIL = "ivan.1945@email.cz";
 
 /* Cesty k fotkám. Prázdný řetězec = zástupný obrázek / Image paths. Empty = placeholder */
-export const PHOTOS = { hero: Hravni, team: MaimPhoto, "work-1": "", "work-2": "", "work-3": "", "work-4": "" };
+export const PHOTOS = { hero: "/images/hero-1000.webp", team: MaimPhoto, "work-1": "", "work-2": "", "work-3": "", "work-4": "" };
 
 /* Stejné pořadí jako t.nav / Same order as t.nav */
 export const SECTION_IDS = ["about", "services", "works", "clients", "contact"];

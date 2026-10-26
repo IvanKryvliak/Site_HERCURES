@@ -1,7 +1,7 @@
 .cs{--black:#0b0b0c;--bg:#0b0b0c;--ink:#f2f2f3;--paper:#131315;--white:#fff;--red:#d1202b;--red-dark:#9d151e;--red-soft:#ff5a63;--maroon:#2a0d10;--grey:#a4a4aa;--line:#2b2b2e;--line-d:#2b2b2e}
 html{scroll-behavior:smooth;scroll-padding-top:72px}
 html,body{margin:0;background:#0b0b0c}
-.cs{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 "Inter Variable",Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-text-size-adjust:100%}
+.cs{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Arial,sans-serif;-webkit-text-size-adjust:100%}
 .cs *,.cs *::before,.cs *::after{box-sizing:border-box}
 .cs h1,.cs h2,.cs h3{margin:0 0 .5em;line-height:1.1;letter-spacing:-.03em}
 .cs h1{font-size:clamp(2.2rem,7vw,4.4rem);font-weight:800}

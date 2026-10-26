@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { lazy, Suspense, useState, useEffect } from "react";
 import HomePage from "./pages/HomePage";
-import AnalyticsPage from "./pages/AnalyticsPage";
-import OwnerVisitPage from "./pages/OwnerVisitPage";
-import PrivacyPage from "./pages/PrivacyPage";
+
+const AnalyticsPage = lazy(() => import("./pages/AnalyticsPage"));
+const OwnerVisitPage = lazy(() => import("./pages/OwnerVisitPage"));
+const PrivacyPage = lazy(() => import("./pages/PrivacyPage"));
 
 /* Jednoduché přepínání stránek bez knihoven: web na "/", analýza na "/#/analytics" */
 export default function App() {
@@ -14,9 +15,9 @@ export default function App() {
     return () => window.removeEventListener("hashchange", onChange);
   }, []);
 
-  if (hash === "#/analytics") return <AnalyticsPage />;
-  if (hash === "#/privacy") return <PrivacyPage />;
-  if (hash === "#/ignore") return <OwnerVisitPage ignore />;
-  if (hash === "#/count") return <OwnerVisitPage ignore={false} />;
+  if (hash === "#/analytics") return <Suspense fallback={null}><AnalyticsPage /></Suspense>;
+  if (hash === "#/privacy") return <Suspense fallback={null}><PrivacyPage /></Suspense>;
+  if (hash === "#/ignore") return <Suspense fallback={null}><OwnerVisitPage ignore /></Suspense>;
+  if (hash === "#/count") return <Suspense fallback={null}><OwnerVisitPage ignore={false} /></Suspense>;
   return <HomePage />;
 }
