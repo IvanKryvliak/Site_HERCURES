@@ -6,13 +6,13 @@ const svgProps = { width: 26, height: 26, viewBox: "0 0 24 24", fill: "none", st
 export default function ContactActions({ t }) {
   const items = [
     WHATSAPP_CONFIGURED && {
-      href: `https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g, "")}?text=${encodeURIComponent(t.waText)}`,
+      href: `https://wa.me/${WHATSAPP_NUMBER.replace(/\D/g, "")}`,
       channel: "whatsapp",
       label: t.whatsapp, value: WHATSAPP_NUMBER.replace(/^\+(\d{3})(\d{3})(\d{3})(\d{3})$/, "+$1 $2 $3 $4"),
       icon: <path d="M21 11.5a8.4 8.4 0 0 1-12.2 7.5L3 20.5l1.6-5.3A8.4 8.4 0 1 1 21 11.5z" />,
     },
     {
-      href: `mailto:${EMAIL}?subject=${encodeURIComponent(t.mailSubject)}&body=${encodeURIComponent(t.mailBody)}`,
+      href: `mailto:${EMAIL}`,
       channel: "mail",
       label: t.mail, value: EMAIL,
       icon: <><rect x="3" y="5" width="18" height="14" rx="1" /><path d="m3 7 9 6 9-6" /></>,
