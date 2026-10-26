@@ -1,0 +1,5 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://www.hefest-rek-byt.com/sitemap.xml
