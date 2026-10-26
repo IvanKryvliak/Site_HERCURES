@@ -1,0 +1,17 @@
+.cs .policy-wrap{max-width:860px;margin:0 auto;padding:20px 20px 60px}
+.cs .policy-top{display:flex;justify-content:space-between;align-items:center;gap:16px;margin-bottom:24px}
+.cs .policy-back{color:#ff8a90;font-size:.85rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;text-decoration:none}
+.cs .policy-back:hover{color:#fff}
+.cs .policy{background:rgba(10,10,11,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.1);border-top:3px solid var(--red);padding:clamp(22px,5vw,48px)}
+.cs .policy h1{font-size:clamp(1.7rem,5vw,2.4rem);margin:0 0 6px}
+.cs .policy-updated{color:var(--grey);margin:0 0 28px;font-size:.9rem}
+.cs .policy-sec{margin-top:28px}
+.cs .policy h2{font-size:1.2rem;margin:0 0 10px;letter-spacing:-.01em}
+.cs .policy h3{font-size:1rem;margin:16px 0 4px;color:#f2f2f3}
+.cs .policy p{color:#c9c9ce;max-width:none;margin:0 0 10px;line-height:1.65}
+.cs .policy ul{margin:0 0 10px;padding-left:20px;color:#c9c9ce;line-height:1.65}
+.cs .policy-scroll{overflow-x:auto}
+.cs .policy table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:560px}
+.cs .policy th{text-align:left;color:var(--grey);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;padding:0 12px 10px 0}
+.cs .policy td{padding:12px 12px 12px 0;border-top:1px solid rgba(255,255,255,.12);vertical-align:top;color:#d6d6da}
+.cs .policy code{font-size:.85rem;color:#ff8a90}

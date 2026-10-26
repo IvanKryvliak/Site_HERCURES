@@ -160,3 +160,6 @@ html,body{margin:0;background:#0b0b0c}
 @media(max-width:860px){.cs .hero{background:rgba(8,8,9,.5)}}
 @media(max-width:560px){.cs .card{padding:20px 18px}.cs .card .n{margin-bottom:14px}.cs .steps li{padding:16px 16px 16px 58px}.cs .steps li::before{left:16px;top:16px}}
 .cs header{background:#09090a;border-bottom-color:rgba(255,255,255,.1)}
+.cs footer .footer-legal{margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,.08);font-size:.82rem;align-items:flex-start}
+.cs footer .footer-legal a{color:#ff8a90;text-decoration:underline;text-underline-offset:3px}
+.cs footer .footer-legal a:hover{color:#fff}

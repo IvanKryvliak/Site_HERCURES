@@ -53,6 +53,8 @@ export const T = {
     mailSubject: "Poptávka rekonstrukce",
     mailBody: "Dobrý den! Zajímá mě rekonstrukce. Prosím o kontakt.\n\nJméno:\nTelefon:\nCo je potřeba zrekonstruovat:",
     foot: ["© 2026 HEFEST REK-BYT", "Rekonstrukce bytů, domů a kanceláří"],
+    operator: "Provozovatel",
+    privacy: "Zásady ochrany osobních údajů",
   },
   en: {
     nav: ["About", "Services", "Projects", "Clients", "Contact"],
@@ -107,6 +109,8 @@ export const T = {
     mailSubject: "Renovation request",
     mailBody: "Hello! I am interested in a renovation. Please contact me.\n\nName:\nPhone:\nWhat needs renovating:",
     foot: ["© 2026 Home & Porch", "Apartment, house and office renovation"],
+    operator: "Operator",
+    privacy: "Privacy policy",
   },
 };
 
