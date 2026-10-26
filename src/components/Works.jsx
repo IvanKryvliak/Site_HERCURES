@@ -2,13 +2,16 @@ import { useMemo, useState } from "react";
 import SectionHead from "./SectionHead";
 import Lightbox from "./Lightbox";
 import { WORKS } from "../data/works";
+import { PHOTO_CAPTIONS } from "../data/photoCaptions";
 import "../styles/gallery.css";
 
 const PAGE = 3; // скільки фото показувати спочатку і скільки додавати по кнопці
 const PLACEHOLDERS = Array.from({ length: PAGE * 2 }, (_, i) => ({ id: `ph-${i}`, src: "", category: "", title: "" }));
 
-export default function Works({ t }) {
-  const items = WORKS.length ? WORKS : PLACEHOLDERS;
+export default function Works({ t, lang }) {
+  const items = useMemo(() => WORKS.length
+    ? WORKS.map((w) => ({ ...w, title: PHOTO_CAPTIONS[w.number]?.[lang] || w.title }))
+    : PLACEHOLDERS, [lang]);
   const categories = useMemo(() => [...new Set(items.map((w) => w.category).filter(Boolean))], [items]);
   const [cat, setCat] = useState("");
   const [shown, setShown] = useState(PAGE);

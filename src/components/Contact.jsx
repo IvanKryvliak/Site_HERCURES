@@ -1,5 +1,5 @@
 import ContactActions from "./ContactActions";
-import { PHONE, PHONE_VIEW, EMAIL } from "../data/config";
+import { PHONE, PHONE_VIEW, EMAIL, PHONE_CONFIGURED } from "../data/config";
 
 export default function Contact({ t }) {
   return (
@@ -10,12 +10,15 @@ export default function Contact({ t }) {
           <h2>{t.contactH}</h2>
           <p className="sub">{t.contactP}</p>
           <ul className="contact-list">
-            {t.cl.map(([label, v], i) => (
-              <li key={label}>
-                <small>{label}</small>
-                {i === 0 ? <a href={`tel:${PHONE}`}>{PHONE_VIEW}</a> : i === 1 ? <a href={`mailto:${EMAIL}`}>{EMAIL}</a> : v}
-              </li>
-            ))}
+            {t.cl.filter((_, i) => i !== 0 || PHONE_CONFIGURED).map(([label]) => {
+              const isPhone = label === t.cl[0][0];
+              return (
+                <li key={label}>
+                  <small>{label}</small>
+                  {isPhone ? <a href={`tel:${PHONE}`}>{PHONE_VIEW}</a> : <a href={`mailto:${EMAIL}`}>{EMAIL}</a>}
+                </li>
+              );
+            })}
           </ul>
         </div>
         <ContactActions t={t} />

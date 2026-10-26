@@ -14,6 +14,6 @@ export const WORKS = Object.entries(files)
   .map(([path, src]) => {
     const parts = path.split("/assets/works/")[1].split("/");
     const file = parts.pop();
-    return { id: path, src, category: parts[0] || "", title: pretty(file) };
+    return { id: path, src, category: parts[0] || "", number: (file.match(/^(\d+)/) || [])[1] || "", title: pretty(file) };
   })
   .sort((a, b) => a.id.localeCompare(b.id, undefined, { numeric: true }));

@@ -17,13 +17,13 @@ export default function Header({ t, lang, setLang }) {
   return (
     <header>
       <div className="wrap bar">
-        <a className="logo" href="#top">{BRAND[lang][0]}<span>&amp;</span>{BRAND[lang][1]}</a>
-        <nav id="menu" className={open ? "open" : ""} aria-label="Menu" onClick={onNavClick}>
+        <a className="logo" href="#top" aria-label="HEFEST REK-BYT">{BRAND[lang][0]}<span>{BRAND[lang][1]}</span></a>
+        <nav id="menu" className={open ? "open" : ""} aria-label={lang === "cs" ? "Hlavní navigace" : "Main navigation"} onClick={onNavClick}>
           {t.nav.map((n, i) => <a key={n} href={`#${SECTION_IDS[i]}`}>{n}</a>)}
         </nav>
         <div className="right">
           <LangSwitcher lang={lang} setLang={setLang} />
-          <button className="burger" aria-label="Menu" aria-expanded={open} aria-controls="menu" onClick={() => setOpen(!open)}><i /></button>
+          <button className="burger" aria-label={lang === "cs" ? "Otevřít menu" : "Open menu"} aria-expanded={open} aria-controls="menu" onClick={() => setOpen(!open)}><i /></button>
         </div>
       </div>
     </header>

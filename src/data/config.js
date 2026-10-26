@@ -1,14 +1,17 @@
 import MaimPhoto from "../assets/Main.jpg"
+import Hravni from "../assets/HEFEST_REK-BYT_hero_1000x1000.jpg"
 
 /* Kontakty, fotky, id sekcí / Contacts, photos, section ids */
-export const PHONE = "+420000000000";
-export const PHONE_VIEW = "+420 000 000 000";
+export const PHONE = "+420777170086";
+export const PHONE_VIEW = "+420 777 170 086";
+export const PHONE_CONFIGURED = Boolean(PHONE && PHONE !== "+420000000000");
 /* Номер WhatsApp у міжнародному форматі з плюсом / WhatsApp number, international format */
-export const WHATSAPP_NUMBER = "+420000000000";
-export const EMAIL = "kajiya473@gmail.com";
+export const WHATSAPP_NUMBER = "+420777170086";
+export const WHATSAPP_CONFIGURED = Boolean(WHATSAPP_NUMBER && WHATSAPP_NUMBER !== "+420000000000");
+export const EMAIL = "ivan.1945@email.cz";
 
 /* Cesty k fotkám. Prázdný řetězec = zástupný obrázek / Image paths. Empty = placeholder */
-export const PHOTOS = { hero: MaimPhoto, team: "", "work-1": "", "work-2": "", "work-3": "", "work-4": "" };
+export const PHOTOS = { hero: Hravni, team: MaimPhoto, "work-1": "", "work-2": "", "work-3": "", "work-4": "" };
 
 /* Stejné pořadí jako t.nav / Same order as t.nav */
 export const SECTION_IDS = ["about", "services", "works", "clients", "contact"];

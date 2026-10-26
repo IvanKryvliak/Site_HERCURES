@@ -20,6 +20,16 @@ export default function HomePage() {
   const [lang, setLang] = useLang();
   const t = T[lang];
 
+  useEffect(() => {
+    document.title = t.pageTitle;
+    const description = document.querySelector('meta[name="description"]');
+    const ogTitle = document.querySelector('meta[property="og:title"]');
+    const ogDescription = document.querySelector('meta[property="og:description"]');
+    if (description) description.setAttribute("content", t.metaDescription);
+    if (ogTitle) ogTitle.setAttribute("content", t.pageTitle);
+    if (ogDescription) ogDescription.setAttribute("content", t.metaDescription);
+  }, [t]);
+
   return (
     <div className="cs">
       <PaintBackground />
@@ -28,12 +38,12 @@ export default function HomePage() {
         <Hero t={t} />
         <About t={t} />
         <Services t={t} />
-        <Works t={t} />
+        <Works t={t} lang={lang} />
         <Clients t={t} />
         <Contact t={t} />
       </main>
       <Footer t={t} />
-      <CallButton />
+      <CallButton lang={lang} />
       <AnalyticsConsent lang={lang} />
     </div>
   );
