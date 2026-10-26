@@ -1,0 +1,15 @@
+# HEFEST REK-BYT
+
+> HEFEST REK-BYT provides apartment and house repairs and renovations, from individual improvements to larger refurbishment projects.
+
+The website presents renovation services, examples of completed work, information for clients, contact details, and the privacy policy. The main website is available in Czech and English.
+
+## Website
+
+- [Home page](/): Overview of renovation and repair services.
+- [About the company](/#about): Company approach and information.
+- [Services](/#services): Apartment, house, bathroom, kitchen, flooring, tiling, painting, and finishing work.
+- [Portfolio](/#works): Examples of renovation and finishing work.
+- [For clients](/#clients): How project planning and renovation work together.
+- [Contact](/#contact): Contact options for discussing a renovation project.
+- [Privacy policy](/#/privacy): Information about privacy and data processing.
