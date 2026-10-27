@@ -35,3 +35,8 @@ export const COMPANY = {
 export const DATA_RETENTION_MONTHS = 14; // має збігатися з supabase/migrations/202610250001_retention.sql
 export const ANALYTICS_REGION = "";      // регіон проєкту Supabase, наприклад "Frankfurt (EU)"
 export const POLICY_UPDATED = "25. 10. 2026";
+
+/* Основна адреса сайту (з www). Використовується для canonical, sitemap і розмітки для Google.
+   Canonical site URL (www version). Used for canonical link, sitemap and structured data. */
+export const SITE_URL = "https://www.hefest-rek-byt.com";
+export const SITE_NAME = "HEFEST REK-BYT";

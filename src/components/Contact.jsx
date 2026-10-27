@@ -10,12 +10,12 @@ export default function Contact({ t }) {
           <h2>{t.contactH}</h2>
           <p className="sub">{t.contactP}</p>
           <ul className="contact-list">
-            {t.cl.filter((_, i) => i !== 0 || PHONE_CONFIGURED).map(([label]) => {
+            {t.cl.filter((_, i) => i !== 0 || PHONE_CONFIGURED).map(([label, value]) => {
               const isPhone = label === t.cl[0][0];
               return (
                 <li key={label}>
                   <small>{label}</small>
-                  {isPhone ? <a href={`tel:${PHONE}`}>{PHONE_VIEW}</a> : <a href={`mailto:${EMAIL}`}>{EMAIL}</a>}
+                  {value ? value : isPhone ? <a href={`tel:${PHONE}`}>{PHONE_VIEW}</a> : <a href={`mailto:${EMAIL}`}>{EMAIL}</a>}
                 </li>
               );
             })}
